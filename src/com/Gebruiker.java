@@ -1,4 +1,4 @@
 package com;
 
-public class Gebruiker {
+public class Gebruiker extends Account{
 }
