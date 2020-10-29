@@ -38,7 +38,7 @@ public class Quiz {
     }
 
     private QuizVraag getQuizVraag(Integer nummer) {
-        var quizvraag = new QuizVraag();
+        var quizvraag = getQuizVraag(nummer);
         return quizvraag;
     }
 

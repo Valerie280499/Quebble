@@ -1,5 +1,6 @@
 package com;
 
+import java.sql.Time;
 import java.util.ArrayList;
 
 public class Score {
@@ -23,8 +24,7 @@ public class Score {
         //TO DO
     }
 
-    public Score berekenScore(){
-        //TO DO
+    public Score berekenScore(ArrayList<Character> letters, String poging, Time benodigdeTijd){
         return null;
     }
 }

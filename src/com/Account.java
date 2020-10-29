@@ -14,13 +14,16 @@ public abstract class Account {
 
     public void login(String gebruikersnaam, String wachtwoord){
         boolean userFound = false;
+        var gebruikerslijst = gebruikers.getGebruikers();
+        var medewerkerslijst = medewerkers.getMedewerkers();
+
         String wachtwoordMedewerker;
         String gebruikersnaamMedewerker;
         String gebruikersnaamGebruiker;
         String wachtwoordGebruiker;
 
         while(!userFound){
-            for (Medewerker::medewerkers){
+            for (int i=0; i<= medewerkerslijst.size(); i++){
                 gebruikersnaamMedewerker = medewerker.getGebruikersnaam();
                 wachtwoordMedewerker = medewerker.getWachtwoord();
                 if(gebruikersnaamMedewerker.equals(gebruikersnaam) && wachtwoordMedewerker.equals(wachtwoord)){
@@ -28,11 +31,11 @@ public abstract class Account {
                     userFound = true;
                 }
             }
-            for(Gebruiker::gebruikers){
+            for(int i=0; i<=gebruikerslijst.size(); i++){
                 gebruikersnaamGebruiker = gebruiker.getGebruikersnaam();
                 wachtwoordGebruiker = gebruiker.getWachtwoord();
                 if(gebruikersnaamGebruiker.equals(gebruikersnaam) && wachtwoordGebruiker.equals(wachtwoord)){
-                    spel.opstartenSpel();
+                    spel.opstartenSpel(gebruikersnaam);
                     userFound = true;
                 }
 

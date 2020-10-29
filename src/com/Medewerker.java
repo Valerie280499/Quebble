@@ -1,6 +1,6 @@
 package com;
 
-public class Medewerker extends Account{
+public class Medewerker extends Account {
     private String gebruikersnaam;
     private String wachtwoord;
 

@@ -2,7 +2,7 @@ package com;
 
 import java.util.ArrayList;
 
-public class Gebruiker extends Account{
+public class Gebruiker extends Account {
     private CreditPakketten creditPakketten;
     private CreditPakket creditPakket;
     private Antwoord antwoord;

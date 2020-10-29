@@ -1,9 +1,9 @@
 package com;
-import extereLibrary;
+// import extereLibrary;
 
 public class LibraryAdptee {
-    public static boolean versturenPoging(String poging) {
-        var controlePoging = externeLibray.ControleerWoord(poging);
-        return Boolean.parseBoolean(controlePoging);
-    }
+    //public static boolean versturenPoging(String poging) {
+        //var controlePoging = externeLibray.ControleerWoord(poging);
+        //return Boolean.parseBoolean(controlePoging);
+    //}
 }

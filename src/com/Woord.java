@@ -10,11 +10,11 @@ public class Woord {
     }
 
     public String getPoging() {
-        return poging;
+        return woord;
     }
 
     public void setPoging(String poging) {
-        this.poging = poging;
+        this.woord = poging;
     }
 
     public int getLengte() {

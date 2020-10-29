@@ -1,5 +1,7 @@
 package com;
 
+import com.*;
+
 import java.sql.Time;
 import java.util.ArrayList;
 
@@ -78,22 +80,23 @@ public class Spel {
         return letters;
     }
 
-    public boolean indienenPoging(String poging){
-        var controlePoging = LibraryAdapter.versturenPoging(poging);
-
-        if (controlePoging){
-            createWoord(poging, poging.length());
-        }
-        return controlePoging;
-    }
+//    public boolean indienenPoging(String poging){
+//        var controlePoging = LibraryAdapter.versturenPoging(poging);
+//
+//        if (controlePoging){
+//            createWoord(poging, poging.length());
+//        }
+//        return controlePoging;
+//    }
 
     public Score berekenScore(String gebruikersnaam, String spelNaam, ArrayList<Character> letters, String poging){
         var benodigdeTijd = stopTimer();
-        var score = Score.berekenScore(letters, poging, benodigdeTijd);
+
+        var score = new Score();
+        score = score.berekenScore(letters, poging, benodigdeTijd);
 
         var gebruiker = getGebruiker(gebruikersnaam);
         gebruiker.addSpelNaamToGespeeldespellen(spelNaam);
-
         return score;
     }
 
