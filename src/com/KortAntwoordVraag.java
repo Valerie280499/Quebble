@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class KortAntwoordVraag extends QuizVraag{
     private ArrayList<String> juistAntwoord;
 
-    public String getJuistAntwoord(){
-
+    public ArrayList<String> getJuistAntwoord(){
+        return this.juistAntwoord;
     }
 }

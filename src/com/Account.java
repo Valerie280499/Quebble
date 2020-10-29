@@ -11,6 +11,7 @@ public abstract class Account {
     private Medewerker medewerker;
     private Spel spel;
 
+
     public void login(String gebruikersnaam, String wachtwoord){
         boolean userFound = false;
         String wachtwoordMedewerker;
@@ -19,7 +20,7 @@ public abstract class Account {
         String wachtwoordGebruiker;
 
         while(!userFound){
-            for (medewerker::medewerkers){
+            for (Medewerker::medewerkers){
                 gebruikersnaamMedewerker = medewerker.getGebruikersnaam();
                 wachtwoordMedewerker = medewerker.getWachtwoord();
                 if(gebruikersnaamMedewerker.equals(gebruikersnaam) && wachtwoordMedewerker.equals(wachtwoord)){
@@ -27,7 +28,7 @@ public abstract class Account {
                     userFound = true;
                 }
             }
-            for(gebruiker::gebruikers){
+            for(Gebruiker::gebruikers){
                 gebruikersnaamGebruiker = gebruiker.getGebruikersnaam();
                 wachtwoordGebruiker = gebruiker.getWachtwoord();
                 if(gebruikersnaamGebruiker.equals(gebruikersnaam) && wachtwoordGebruiker.equals(wachtwoord)){
