@@ -10,6 +10,7 @@ public class Gebruiker extends Account{
     private ArrayList<String> gespeeldeSpellen;
     private String gebruikersnaam;
     private String wachtwoord;
+    private int aantalCredits;
 
     public ArrayList<CreditPakket> ophalenCreditPakketten(){
         return creditPakketten.getPakketten();
@@ -17,5 +18,17 @@ public class Gebruiker extends Account{
 
     public CreditPakket bevestigPakketKeuze(int nummerCreditPakket) {
         return creditPakket.getGekozenCreditPakket(nummerCreditPakket);
+    }
+
+    public void betaalCredits(CreditPakket gekozenCreditPakket) {
+        creditPakket.delegeerBetaling(creditPakket.getPakketPrijs());
+
+        if(creditPakket.delegeerBetaling(creditPakket.getPakketPrijs())== true){
+            aantalCredits = creditPakket.getCredits();
+            verhoogsaldo(aantalCredits);
+        }
+    }
+    public void verhoogsaldo(int aantalCredits){
+        this.saldo += aantalCredits;
     }
 }

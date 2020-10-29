@@ -12,4 +12,8 @@ public class Spel {
     public CreditPakket bevestigPakketKeuze(int nummerCreditPakket){
         return gebruiker.bevestigPakketKeuze(nummerCreditPakket);
     }
+
+    public void betaalCredits(CreditPakket gekozenCreditPakket){
+        gebruiker.betaalCredits(gekozenCreditPakket);
+    }
 }
