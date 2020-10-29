@@ -6,11 +6,12 @@ public class Medewerker extends Account{
 
     public String getGebruikersnaam(){
         return gebruikersnaam;
-        //TO DO
     }
 
     public String getWachtwoord(){
         return wachtwoord;
-        //TO DO
+    }
+
+    public void beheer() {
     }
 }

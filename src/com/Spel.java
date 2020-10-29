@@ -16,4 +16,7 @@ public class Spel {
     public void betaalCredits(CreditPakket gekozenCreditPakket){
         gebruiker.betaalCredits(gekozenCreditPakket);
     }
+
+    public void opstartenSpel() {
+    }
 }

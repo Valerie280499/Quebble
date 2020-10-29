@@ -5,7 +5,6 @@ import java.util.Arrays;
 
 public class CreditPakketten {
     private ArrayList<CreditPakket> pakketten;
-//    pakketten = new ArrayList<>(Arrays.asList(1000))
 
 
     public void getCreditPakketten() {
