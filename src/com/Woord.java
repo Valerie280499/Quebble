@@ -1,12 +1,12 @@
 package com;
 
 public class Woord {
-    private String poging;
-    private int length;
+    private String woord;
+    private int lengte;
 
-    public Woord(String poging, int length) {
-        this.poging = poging;
-        this.length = length;
+    public Woord(String poging, int lengte) {
+        this.woord = poging;
+        this.lengte = lengte;
     }
 
     public String getPoging() {
@@ -17,11 +17,11 @@ public class Woord {
         this.poging = poging;
     }
 
-    public int getLength() {
-        return length;
+    public int getLengte() {
+        return lengte;
     }
 
-    public void setLength(int length) {
-        this.length = length;
+    public void setLengte(int lengte) {
+        this.lengte = lengte;
     }
 }

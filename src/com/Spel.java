@@ -14,7 +14,6 @@ public class Spel {
     }
 
     public Gebruiker getGebruiker(String gebruikersnaam){
-
         return null;
     }
 
@@ -98,26 +97,11 @@ public class Spel {
         return score;
     }
 
-    public CreditPakket ophalenCreditPakketten(){
-
-        return null;
-    }
-
-    public CreditPakket bevestigPakketKeuze(int nummercreditPakket){
-
-        return null;
-    }
-
-    public void betaalCredits(CreditPakket gekozenCreditPakket){
-
-    }
-
     public ArrayList<String> geefAnwtoord(String antwoordVanGebruiker, String gebruikersnaam){
         return null;
     }
 
     public String readInputFromUser(String antwoordVanGebruiker){
-
         return null;
     }
 
@@ -139,14 +123,22 @@ public class Spel {
     }
 
     public String geefOp(){
-
         return null;
     }
 
     public String createGeefOpPoging(){
-
         return null;
     }
 
+    public ArrayList<CreditPakket> ophalenCreditPakketten(){
+       return gebruiker.ophalenCreditPakketten();
+    }
 
+    public CreditPakket bevestigPakketKeuze(int nummerCreditPakket){
+        return gebruiker.bevestigPakketKeuze(nummerCreditPakket);
+    }
+
+    public void betaalCredits(CreditPakket gekozenCreditPakket){
+        gebruiker.betaalCredits(gekozenCreditPakket);
+    }
 }

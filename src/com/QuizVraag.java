@@ -1,6 +1,6 @@
 package com;
 
-public class QuizVraag {
+public abstract class QuizVraag {
     private String vraag;
     private Character letter;
 
