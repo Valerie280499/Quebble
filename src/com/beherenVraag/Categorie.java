@@ -1,4 +1,4 @@
-package com;
+package com.beherenVraag;
 
 public class Categorie {
     private String categorienaam;

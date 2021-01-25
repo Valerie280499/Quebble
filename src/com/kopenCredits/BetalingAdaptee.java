@@ -1,4 +1,4 @@
-package com;
+package com.kopenCredits;
 
 public class BetalingAdaptee implements BetalingAdapter {
     private ExterneBetalingsAfhandelaar betalingsAfhandelaar;
