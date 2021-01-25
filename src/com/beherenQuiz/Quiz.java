@@ -1,4 +1,7 @@
-package com;
+package com.beherenQuiz;
+
+import com.beherenVraag.QuizVraag;
+import com.spelenSpel.Antwoord;
 
 import java.util.ArrayList;
 
