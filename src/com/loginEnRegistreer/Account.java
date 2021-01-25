@@ -1,6 +1,6 @@
-package com;
+package com.loginEnRegistreer;
 
-import java.util.ArrayList;
+import com.spelenSpel.Spel;
 
 public abstract class Account {
     private String gebruikersnaam;

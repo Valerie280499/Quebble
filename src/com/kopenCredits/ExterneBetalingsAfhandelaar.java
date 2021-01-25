@@ -1,4 +1,4 @@
-package com;
+package com.kopenCredits;
 
 //Simulatie van de externe betalingsafhandelaar
 

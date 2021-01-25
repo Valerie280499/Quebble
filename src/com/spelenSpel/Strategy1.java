@@ -1,6 +1,6 @@
-package com;
+package com.spelenSpel;
 
-public class Strategy2 implements Puntentelling{
+public class Strategy1 implements Puntentelling{
 
     @Override
     public Score berekenScore() {

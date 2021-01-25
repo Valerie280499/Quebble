@@ -1,4 +1,4 @@
-package com;
+package com.loginEnRegistreer;
 
 public class Medewerker extends Account {
     private String gebruikersnaam;
