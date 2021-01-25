@@ -1,4 +1,4 @@
-package com;
+package com.spelenSpel;
 
 import java.sql.Time;
 import java.util.ArrayList;
