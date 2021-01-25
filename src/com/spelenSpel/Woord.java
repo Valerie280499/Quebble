@@ -1,4 +1,4 @@
-package com;
+package com.spelenSpel;
 
 public class Woord {
     private String woord;

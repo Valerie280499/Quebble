@@ -1,4 +1,4 @@
-package com;
+package com.kopenCredits;
 
 public class CreditPakket {
     private double pakketPrijs;

@@ -1,4 +1,4 @@
-package com;
+package com.spelenSpel;
 
 public class Antwoord {
     private String gegevenAntwoord;

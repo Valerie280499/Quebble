@@ -1,4 +1,4 @@
-package com;
+package com.kopenCredits;
 
 import java.util.ArrayList;
 import java.util.Arrays;
