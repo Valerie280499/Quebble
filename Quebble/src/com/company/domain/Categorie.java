@@ -7,5 +7,8 @@ public enum Categorie {
      AARDRIJKSKUNDE,
      GESCHIEDENIS,
      TAAL,
-     BIOLOGIE
+     BIOLOGIE,
+     SPORT,
+     ALGEMEEN,
+     MUZIEK
 }

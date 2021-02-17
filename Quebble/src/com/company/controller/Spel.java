@@ -26,24 +26,24 @@ public class Spel {
 
     public Spel() {
         var vragenQuiz1 = new ArrayList<Quizvraag>();
-        vragenQuiz1.add(new Quizvraag("vraag1", new ArrayList<>(Arrays.asList("antwoord1a", "antwoord1b")), 1, 'N', Categorie.SCIENCE));
-        vragenQuiz1.add(new Quizvraag("vraag2", new ArrayList<>(Arrays.asList("antwoord2a", "antwoord2b")), 2, 'E', Categorie.AARDRIJKSKUNDE));
-        vragenQuiz1.add(new Quizvraag("vraag3", new ArrayList<>(Arrays.asList("antwoord3a", "antwoord3b")), 3, 'V', Categorie.BIOLOGIE));
-        vragenQuiz1.add(new Quizvraag("vraag4", new ArrayList<>(Arrays.asList("antwoord4a", "antwoord4b")), 4, 'A', Categorie.DIER));
-        vragenQuiz1.add(new Quizvraag("vraag5", new ArrayList<>(Arrays.asList("antwoord5a", "antwoord5b")), 5, 'G', Categorie.GESCHIEDENIS));
-        vragenQuiz1.add(new Quizvraag("vraag6", new ArrayList<>(Arrays.asList("antwoord6a", "antwoord6b")), 6, 'E', Categorie.MENS));
-        vragenQuiz1.add(new Quizvraag("vraag7", new ArrayList<>(Arrays.asList("antwoord7a", "antwoord7b")), 7, 'O', Categorie.TAAL));
-        vragenQuiz1.add(new Quizvraag("vraag8", new ArrayList<>(Arrays.asList("antwoord8a", "antwoord8b")), 8, 'T', Categorie.BIOLOGIE));
+        vragenQuiz1.add(new Quizvraag("Wat is de hoofdstad van Peru?\n A. Arequipa\n B. Caracas\n C. Lima\n D. Santiago\n", new ArrayList<>(Arrays.asList("lima", "C", "c", "C. Lima")), 1, 'N', Categorie.AARDRIJKSKUNDE));
+        vragenQuiz1.add(new Quizvraag("Hoe heet het officieuze landenkampioenschapp tennis voor mannen?\n A. Davis Cup\n B. Diamond League\n C. Fed Cup\n D. Nations League", new ArrayList<>(Arrays.asList("davis cup", "A", "a", "A. Davis Cup")), 2, 'E', Categorie.SPORT));
+        vragenQuiz1.add(new Quizvraag("Wat is de voornaam van de schepper van Miss Marple en Hercule Poirot?\n A. Ruth\n B. Emmy\n C. Joanne\n D. Agatha\n", new ArrayList<>(Arrays.asList("agatha", "D", "d", "D. Agatha")), 3, 'V', Categorie.ALGEMEEN));
+        vragenQuiz1.add(new Quizvraag("Welke van de volgende Engelse voetbalclub is afkomstig uit Liverpool?\n A. Arsenal\n B. Chelsea\n C. Everton\n D. Tottenham Hotsput\n", new ArrayList<>(Arrays.asList("everton", "C", "c", "C. Everton")), 4, 'A', Categorie.SPORT));
+        vragenQuiz1.add(new Quizvraag("Wat is de hoofdstad van het Franse departement Vaucluse die we kennen uit een heel bekend liedje over een brug?", new ArrayList<>(Arrays.asList("Avignon", "avignon")), 5, 'G', Categorie.GESCHIEDENIS));
+        vragenQuiz1.add(new Quizvraag("Welke band stond in 2008 in de hitparade met de song Viva La Vida?", new ArrayList<>(Arrays.asList("Coldplay", "coldplay")), 6, 'E', Categorie.MUZIEK));
+        vragenQuiz1.add(new Quizvraag("Wat is de bijnaam van de Conservatieve Partij in Engeland?", new ArrayList<>(Arrays.asList("tory", "tories", "the tories")), 7, 'O', Categorie.ALGEMEEN));
+        vragenQuiz1.add(new Quizvraag("Welke stad ligt tussen 2 continenten?", new ArrayList<>(Arrays.asList("istanboel", "istanbul")), 8, 'T', Categorie.AARDRIJKSKUNDE));
 
         var vragenQuiz2 = new ArrayList<Quizvraag>();
-        vragenQuiz2.add(new Quizvraag("vraag1", new ArrayList<>(Arrays.asList("antwoord1a", "antwoord1b")), 1, 'L', Categorie.BIOLOGIE));
-        vragenQuiz2.add(new Quizvraag("vraag2", new ArrayList<>(Arrays.asList("antwoord2a", "antwoord2b")), 2, 'A', Categorie.TAAL));
-        vragenQuiz2.add(new Quizvraag("vraag3", new ArrayList<>(Arrays.asList("antwoord3a", "antwoord3b")), 3, 'G', Categorie.MENS));
-        vragenQuiz2.add(new Quizvraag("vraag4", new ArrayList<>(Arrays.asList("antwoord4a", "antwoord4b")), 4, 'N', Categorie.GESCHIEDENIS));
-        vragenQuiz2.add(new Quizvraag("vraag5", new ArrayList<>(Arrays.asList("antwoord5a", "antwoord5b")), 5, 'E', Categorie.AARDRIJKSKUNDE));
-        vragenQuiz2.add(new Quizvraag("vraag6", new ArrayList<>(Arrays.asList("antwoord6a", "antwoord6b")), 6, 'R', Categorie.SCIENCE));
-        vragenQuiz2.add(new Quizvraag("vraag7", new ArrayList<>(Arrays.asList("antwoord7a", "antwoord7b")), 7, 'E', Categorie.MENS));
-        vragenQuiz2.add(new Quizvraag("vraag8", new ArrayList<>(Arrays.asList("antwoord8a", "antwoord8b")), 8, 'A', Categorie.AARDRIJKSKUNDE));
+        vragenQuiz2.add(new Quizvraag("Hoe lang duurde de 80 jarige oorlog?\n A. 25 jaar\n B. 40 jaar\n C. 80 jaar\n D. 93 jaar\n", new ArrayList<>(Arrays.asList("80 jaar", "C", "c", "C. 80 jaar")), 1, 'L', Categorie.GESCHIEDENIS));
+        vragenQuiz2.add(new Quizvraag("In de wetenschappelijk naamgeving van soorten bestaat uit 2 delen. Welke van deze twee word met een hoofdletter geschreven?\n A. De soortaanduiding\n B. De geslachtsnaam\n C. Allebei\n D. Namen van soorten worden niet met hoofdletters geschreven.\n", new ArrayList<>(Arrays.asList("de geslachtsnaam", "geslachtsnaam", "B", "b", "B. De geslachtsnaam")), 2, 'A', Categorie.BIOLOGIE));
+        vragenQuiz2.add(new Quizvraag("Uit welke taal komt het woord 'abrikoos' oorspronkelijk?\n A. Oostenrijks\n B. Chinees\n C. Arabisch\n D. Nederlands", new ArrayList<>(Arrays.asList("arabisch", "C", "c", "C. Arabisch")), 3, 'G', Categorie.TAAL));
+        vragenQuiz2.add(new Quizvraag("Uit welke 2 atomen bestaat een water molucuul?\n A. Water heeft geen moleculen\n B. Waterstof en zuurstof\n C. waterstof\n Waterstof en stikstof ", new ArrayList<>(Arrays.asList("waterstof en zuurstof", "B", "b", "B. Waterstof en zuurstof")), 4, 'N', Categorie.SCIENCE));
+        vragenQuiz2.add(new Quizvraag("Hoe wordt in de biologie een triplet van basen genoemd dat codeert voor een aminozuur?", new ArrayList<>(Arrays.asList("codon", "codogen")), 5, 'E', Categorie.BIOLOGIE));
+        vragenQuiz2.add(new Quizvraag("Welke kleur krijg je als je groen en rood mengt?", new ArrayList<>(Arrays.asList("Geel", "geel")), 6, 'R', Categorie.SCIENCE));
+        vragenQuiz2.add(new Quizvraag("Sinds welk jaar is Limburg een Nederlandse provincie? ", new ArrayList<>(Arrays.asList("1867")), 7, 'E', Categorie.AARDRIJKSKUNDE));
+        vragenQuiz2.add(new Quizvraag("Waar komt de rockband ACDC oorspronkelijk vandaan?", new ArrayList<>(Arrays.asList("Australië", "australië", "Australie", "australie")), 8, 'A', Categorie.MUZIEK));
 
         spelNamen = new ArrayList<>();
         spelNamen.add(new Quiz("spel1", vragenQuiz1));
@@ -88,7 +88,7 @@ public class Spel {
         return spelNaam;
     }
 
-    public String ophalenQuizvraag(String spelNaam, int i){
+    public Quizvraag ophalenQuizvraag(String spelNaam, int i){
 
         Quiz quiz = null;
         try {

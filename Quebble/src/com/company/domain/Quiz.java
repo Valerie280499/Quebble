@@ -30,9 +30,9 @@ public class Quiz {
         this.quizVragen = quizVragen;
     }
 
-    public String haalQuizVraagOp(int i) {
+    public Quizvraag haalQuizVraagOp(int i) {
         var quizVraag = quizVragen.get(i);
-        return quizVraag.getVraag();
+        return quizVraag;
     }
 
     public ArrayList<Character> controleerAntwoorden(ArrayList<Antwoord> antwoorden) {

@@ -39,8 +39,8 @@ public class Main {
             var antwoorden = new ArrayList<Antwoord>();
             for (int i=0; i<=7; i++){
 
-                var vraag = spel.ophalenQuizvraag(spelnaam, i);
-                System.out.println("\n"+vraag);
+                var quizvraag = spel.ophalenQuizvraag(spelnaam, i);
+                System.out.println("\nCategorie: "+quizvraag.getCategorie()+"\n"+quizvraag.getVraag());
 
                 var antwoordVanGebruiker = readInputFromUser();
                 antwoorden = spel.geefAntwoord(antwoordVanGebruiker, gebruikersnaam);
