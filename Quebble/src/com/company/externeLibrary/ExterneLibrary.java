@@ -11,7 +11,7 @@ public class ExterneLibrary {
     public ExterneLibrary() { }
 
     public boolean controleerWoord(String poging){
-        file = new File("src/com/company/woordenlijsten/woordenVan"+String.valueOf(poging.length())+"Letters");
+        file = new File("src/com/company/woordenlijsten/woordenVan"+poging.length()+"Letters");
         createScanner();
 
         while (scan.hasNext()){

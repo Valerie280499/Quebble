@@ -31,8 +31,7 @@ public class Quiz {
     }
 
     public Quizvraag haalQuizVraagOp(int i) {
-        var quizVraag = quizVragen.get(i);
-        return quizVraag;
+        return quizVragen.get(i);
     }
 
     public ArrayList<Character> controleerAntwoorden(ArrayList<Antwoord> antwoorden) {

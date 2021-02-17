@@ -16,13 +16,12 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 public class Spel {
-    private ArrayList<Quiz> spelNamen;
-    private Gebruikers gebruikers;
-    private ILibraryAdapter libraryAdaptee;
-    private Score score;
-    private Woord woord;
+    private final ArrayList<Quiz> SPELNAMEN;
+    private final Gebruikers GEBRUIKERS;
+    private final ILibraryAdapter LIBRARY_ADAPTER;
+    private final Score SCORE;
     private long startTime;
-    private long endTime;
+    private Woord woord;
 
     public Spel() {
         var vragenQuiz1 = new ArrayList<Quizvraag>();
@@ -45,13 +44,13 @@ public class Spel {
         vragenQuiz2.add(new Quizvraag("Sinds welk jaar is Limburg een Nederlandse provincie? ", new ArrayList<>(Arrays.asList("1867")), 7, 'E', Categorie.AARDRIJKSKUNDE));
         vragenQuiz2.add(new Quizvraag("Waar komt de rockband ACDC oorspronkelijk vandaan?", new ArrayList<>(Arrays.asList("Australië", "australië", "Australie", "australie")), 8, 'A', Categorie.MUZIEK));
 
-        spelNamen = new ArrayList<>();
-        spelNamen.add(new Quiz("spel1", vragenQuiz1));
-        spelNamen.add(new Quiz("spel2", vragenQuiz2));
+        SPELNAMEN = new ArrayList<>();
+        SPELNAMEN.add(new Quiz("spel1", vragenQuiz1));
+        SPELNAMEN.add(new Quiz("spel2", vragenQuiz2));
 
-        this.gebruikers = new Gebruikers();
-        this.libraryAdaptee = new LibraryAdaptee();
-        this.score = new Score();
+        this.GEBRUIKERS = new Gebruikers();
+        this.LIBRARY_ADAPTER = new LibraryAdaptee();
+        this.SCORE = new Score();
     }
 
     public String opstartenSpel (String gebruikersnaam, String wachtwoord) throws WachtwoordNietCorrectError, GebruikerNietGevondenError {
@@ -73,14 +72,14 @@ public class Spel {
 
         gebruiker.setAntwoorden();
         var gespeeldeSpellen = gebruiker.getGespeeldeSpellen();
-        if (gespeeldeSpellen.size() == spelNamen.size()){
+        if (gespeeldeSpellen.size() == SPELNAMEN.size()){
             gebruiker.emptyGespeeldeSpellen();
         }
 
         var spelNaam = "";
-        for (int i=0; i<=spelNamen.size(); i++){
-            if (!gespeeldeSpellen.contains(spelNamen.get(i).getSpelNaam())){
-                spelNaam = spelNamen.get(i).getSpelNaam();
+        for (int i = 0; i<= SPELNAMEN.size(); i++){
+            if (!gespeeldeSpellen.contains(SPELNAMEN.get(i).getSpelNaam())){
+                spelNaam = SPELNAMEN.get(i).getSpelNaam();
                 startTimer();
                 break;
             }
@@ -102,20 +101,16 @@ public class Spel {
     }
 
     public ArrayList<Antwoord> geefAntwoord(String antwoordVanGebruiker, String gebruikersnaam){
+
         Gebruiker gebruiker = null;
         try {
             gebruiker = getGebruiker(gebruikersnaam);
+
         } catch (GebruikerNietGevondenError gebruikerNietGevondenError) {
             gebruikerNietGevondenError.printStackTrace();
         }
 
-        var antwoorden = gebruiker.geefAntwoord(antwoordVanGebruiker);
-
-        if (antwoorden != null){
-            return antwoorden;
-        } else {
-            return null;
-        }
+        return gebruiker.geefAntwoord(antwoordVanGebruiker);
     }
 
     public ArrayList<Character> controleerAntwoorden(ArrayList<Antwoord> antwoorden, String spelNaam){
@@ -126,21 +121,20 @@ public class Spel {
             quizNietGevondenError.printStackTrace();
         }
 
-        var letters = quiz.controleerAntwoorden(antwoorden);
-        return letters;
+        return quiz.controleerAntwoorden(antwoorden);
     }
 
     public boolean indienenPoging(String poging){
         if (poging.length()==0 || poging.length()==1){ return false; }
 
-        var controlePoging = libraryAdaptee.versturenPoging(poging);
+        var controlePoging = LIBRARY_ADAPTER.versturenPoging(poging);
         if (controlePoging){ woord = new Woord(poging, poging.length()); }
         return controlePoging;
     }
 
     public int berekenScore(String gebruikersnaam, String spelnaam, ArrayList<Character> letters) {
         var benodigdeTijd = stopTimer();
-        var totaalAantalBehaaldePunten = score.berekenScore(letters, woord, benodigdeTijd);
+        var totaalAantalBehaaldePunten = SCORE.berekenScore(letters, woord, benodigdeTijd);
         totaalAantalBehaaldePunten = (totaalAantalBehaaldePunten/6)*5;
 
         try {
@@ -158,7 +152,7 @@ public class Spel {
     }
 
     private Quiz getQuiz(String spelNaam) throws QuizNietGevondenError {
-        var quiz = spelNamen
+        var quiz = SPELNAMEN
                 .stream()
                 .filter(i -> i.getSpelNaam().equals(spelNaam))
                 .collect(Collectors.toList());
@@ -171,7 +165,7 @@ public class Spel {
     }
 
     private Gebruiker getGebruiker(String gebruikersnaam) throws GebruikerNietGevondenError {
-        var gebruiker = gebruikers.getGebruikers()
+        var gebruiker = GEBRUIKERS.getGEBRUIKERS()
                 .stream()
                 .filter(i -> i.getGebruikersnaam().equals(gebruikersnaam))
                 .collect(Collectors.toList());
@@ -188,7 +182,7 @@ public class Spel {
     }
 
     private Integer stopTimer() {
-        endTime = System.nanoTime();
+        long endTime = System.nanoTime();
         return Math.toIntExact(TimeUnit.MINUTES.convert(endTime - startTime, TimeUnit.NANOSECONDS));
     }
 

@@ -11,7 +11,7 @@ public class PuntentellingMetWoord implements Puntentelling {
     private final HashMap<Integer, IntStream> puntenVoorAantalJuisteAntwoorden;
     private final HashMap<Integer, IntStream> puntenVoorLengteWoord;
 
-    private BepaalScoreVoorOnderdeel bepaalScoreVoorOnderdeel;
+    private final BepaalScoreVoorOnderdeel BEPAAL_SCORE_VOOR_ONDERDEEL;
     private int score;
 
     public PuntentellingMetWoord() {
@@ -36,15 +36,15 @@ public class PuntentellingMetWoord implements Puntentelling {
             this.put(4, range(7,9));
         }};
 
-        bepaalScoreVoorOnderdeel = new BepaalScoreVoorOnderdeel();
+        BEPAAL_SCORE_VOOR_ONDERDEEL = new BepaalScoreVoorOnderdeel();
         score = 0;
     }
 
     @Override
     public Integer berekenScore(int benodigdeTijd, int aantalJuisteAntwoorden, int lengteWoord) {
-        score = bepaalScoreVoorOnderdeel.berekenScore(benodigdeTijd, puntenVoorBenodigdeTijd, score);
-        score = bepaalScoreVoorOnderdeel.berekenScore(aantalJuisteAntwoorden, puntenVoorAantalJuisteAntwoorden, score);
-        score = bepaalScoreVoorOnderdeel.berekenScore(lengteWoord, puntenVoorLengteWoord, score);
+        score = BEPAAL_SCORE_VOOR_ONDERDEEL.berekenScore(benodigdeTijd, puntenVoorBenodigdeTijd, score);
+        score = BEPAAL_SCORE_VOOR_ONDERDEEL.berekenScore(aantalJuisteAntwoorden, puntenVoorAantalJuisteAntwoorden, score);
+        score = BEPAAL_SCORE_VOOR_ONDERDEEL.berekenScore(lengteWoord, puntenVoorLengteWoord, score);
 
         return score;
     }

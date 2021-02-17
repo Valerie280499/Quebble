@@ -9,8 +9,8 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-    private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-    private static Spel spel = new Spel();
+    private static final BufferedReader READER = new BufferedReader(new InputStreamReader(System.in));
+    private static final Spel SPEL = new Spel();
 
     public static void main(String[] args) {
         System.out.println("Vul je gebruikersnaam in:");
@@ -23,7 +23,7 @@ public class Main {
 
             var spelnaam = "";
             try {
-                spelnaam = spel.opstartenSpel(gebruikersnaam, wachtwoord);
+                spelnaam = SPEL.opstartenSpel(gebruikersnaam, wachtwoord);
             } catch (WachtwoordNietCorrectError | GebruikerNietGevondenError error) {
                 error.printStackTrace();
                 run = false;
@@ -39,15 +39,15 @@ public class Main {
             var antwoorden = new ArrayList<Antwoord>();
             for (int i=0; i<=7; i++){
 
-                var quizvraag = spel.ophalenQuizvraag(spelnaam, i);
+                var quizvraag = SPEL.ophalenQuizvraag(spelnaam, i);
                 System.out.println("\nCategorie: "+quizvraag.getCategorie()+"\n"+quizvraag.getVraag());
 
                 var antwoordVanGebruiker = readInputFromUser();
-                antwoorden = spel.geefAntwoord(antwoordVanGebruiker, gebruikersnaam);
+                antwoorden = SPEL.geefAntwoord(antwoordVanGebruiker, gebruikersnaam);
             }
 
-            var letters = spel.controleerAntwoorden(antwoorden, spelnaam);
-            letters.stream().forEach(System.out::println);
+            var letters = SPEL.controleerAntwoorden(antwoorden, spelnaam);
+            letters.forEach(System.out::println);
             System.out.println("type 'X' als je wilt opgeven");
 
             var controlePoging = false;
@@ -56,13 +56,13 @@ public class Main {
                 poging = readInputFromUser();
 
                 if (poging.equals("x")){
-                    spel.geefOp();
+                    SPEL.geefOp();
                     break;
                 }
-                controlePoging = spel.indienenPoging(poging);
+                controlePoging = SPEL.indienenPoging(poging);
             }
 
-            var score = spel.berekenScore(gebruikersnaam, spelnaam, letters);
+            var score = SPEL.berekenScore(gebruikersnaam, spelnaam, letters);
             System.out.println("Je score heb een "+score+" gescored!");
             System.out.println("Wil je opnieuw een spel spelen? (J)a / (N)ee");
 
@@ -79,7 +79,7 @@ public class Main {
     public static String readInputFromUser() {
         var poging = "";
         try {
-            poging = reader.readLine();
+            poging = READER.readLine();
         } catch (IOException e) {
             e.printStackTrace();
         }

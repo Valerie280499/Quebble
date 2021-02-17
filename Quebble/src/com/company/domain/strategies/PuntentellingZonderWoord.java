@@ -8,7 +8,7 @@ import java.util.stream.IntStream;
 import static java.util.stream.IntStream.range;
 
 public class PuntentellingZonderWoord implements Puntentelling {
-    private BepaalScoreVoorOnderdeel bepaalscoreVoorOnderdeel;
+    private final BepaalScoreVoorOnderdeel BEPAAL_SCORE_VOOR_ONDERDEEL;
     private final HashMap<Integer, IntStream> puntenVoorBenodigdeTijd;
     private final HashMap<Integer, IntStream> puntenVoorAantalJuisteAntwoorden;
     private int score;
@@ -28,14 +28,14 @@ public class PuntentellingZonderWoord implements Puntentelling {
             this.put(4, range(7,9));
         }};
 
-        bepaalscoreVoorOnderdeel = new BepaalScoreVoorOnderdeel();
+        BEPAAL_SCORE_VOOR_ONDERDEEL = new BepaalScoreVoorOnderdeel();
         score = 0;
     }
 
     @Override
     public Integer berekenScore(int benodigdeTijd, int aantalJuisteAntwoorden, int lengteWoord) {
-        score = bepaalscoreVoorOnderdeel.berekenScore(benodigdeTijd, puntenVoorBenodigdeTijd, score);
-        score = bepaalscoreVoorOnderdeel.berekenScore(aantalJuisteAntwoorden, puntenVoorAantalJuisteAntwoorden, score);
+        score = BEPAAL_SCORE_VOOR_ONDERDEEL.berekenScore(benodigdeTijd, puntenVoorBenodigdeTijd, score);
+        score = BEPAAL_SCORE_VOOR_ONDERDEEL.berekenScore(aantalJuisteAntwoorden, puntenVoorAantalJuisteAntwoorden, score);
         return score;
     }
 

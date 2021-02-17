@@ -1,7 +1,5 @@
 package com.company.domain.dto;
 
-import java.util.ArrayList;
-
 public class Antwoord {
     private String gegevenAntwoord;
 

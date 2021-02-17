@@ -20,9 +20,6 @@ public class Gebruiker {
         this.wachtwoord = wachtwoord;
     }
 
-    public Gebruiker() {
-    }
-
     public int getSaldo() {
         return saldo;
     }
@@ -76,7 +73,7 @@ public class Gebruiker {
     }
 
     public void setAntwoorden() {
-        this.antwoorden = new ArrayList<Antwoord>();
+        this.antwoorden = new ArrayList<>();
     }
 
     public ArrayList<Antwoord> geefAntwoord(String antwoordVanGebruiker) {

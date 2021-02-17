@@ -5,23 +5,23 @@ import com.company.domain.Gebruiker;
 import java.util.ArrayList;
 
 public class Gebruikers {
-    private ArrayList<Gebruiker> gebruikers;
+    private final ArrayList<Gebruiker> GEBRUIKERS;
 
     public Gebruikers() {
-        this.gebruikers = new ArrayList<>();
+        this.GEBRUIKERS = new ArrayList<>();
 
         var gespeeldeSpellen = new ArrayList<String>();
-        gebruikers.add(new Gebruiker(1000, gespeeldeSpellen, "mark", "1237"));
-        gebruikers.add(new Gebruiker(1000, gespeeldeSpellen,"valerie", "blaat"));
-        gebruikers.add(new Gebruiker(400,gespeeldeSpellen, "lauren", "ooadopdracht"));
-        gebruikers.add(new Gebruiker(800, gespeeldeSpellen, "richane", "geheim"));
+        GEBRUIKERS.add(new Gebruiker(1000, gespeeldeSpellen, "mark", "1237"));
+        GEBRUIKERS.add(new Gebruiker(1000, gespeeldeSpellen,"valerie", "blaat"));
+        GEBRUIKERS.add(new Gebruiker(400,gespeeldeSpellen, "lauren", "ooadopdracht"));
+        GEBRUIKERS.add(new Gebruiker(800, gespeeldeSpellen, "richane", "geheim"));
     }
 
-    public ArrayList<Gebruiker> getGebruikers() {
-        return gebruikers;
+    public ArrayList<Gebruiker> getGEBRUIKERS() {
+        return GEBRUIKERS;
     }
 
-    public void setGebruikers(Gebruiker newGebruiker) {
-        gebruikers.add(newGebruiker);
+    public void setGEBRUIKERS(Gebruiker newGebruiker) {
+        GEBRUIKERS.add(newGebruiker);
     }
 }
