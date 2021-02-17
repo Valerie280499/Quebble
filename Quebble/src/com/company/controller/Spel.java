@@ -8,6 +8,7 @@ import com.company.domain.dto.Gebruikers;
 import com.company.domain.dto.Quizvraag;
 import com.company.errors.GebruikerNietGevondenError;
 import com.company.errors.QuizNietGevondenError;
+import com.company.errors.WachtwoordNietCorrectError;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,17 +54,12 @@ public class Spel {
         this.score = new Score();
     }
 
-    public String opstartenSpel (String gebruikersnaam, String wachtwoord){
+    public String opstartenSpel (String gebruikersnaam, String wachtwoord) throws WachtwoordNietCorrectError, GebruikerNietGevondenError {
 
-        Gebruiker gebruiker = null;
-        try {
-            gebruiker = getGebruiker(gebruikersnaam);
-        } catch (GebruikerNietGevondenError error) {
-            error.printStackTrace();
-        }
+        var gebruiker = getGebruiker(gebruikersnaam);
 
-        if (!gebruiker.getWachtwoord().equals(wachtwoord)){
-            return "Wachtwoord onjuist";
+        if (!gebruiker.getWachtwoord().equals(wachtwoord)) {
+            throw new WachtwoordNietCorrectError();
         }
 
         System.out.println("\nJe saldo is:"+gebruiker.getSaldo());
@@ -81,15 +77,15 @@ public class Spel {
             gebruiker.emptyGespeeldeSpellen();
         }
 
-        Quiz quiz = null;
+        var spelNaam = "";
         for (int i=0; i<=spelNamen.size(); i++){
             if (!gespeeldeSpellen.contains(spelNamen.get(i).getSpelNaam())){
-                quiz = spelNamen.get(i);
+                spelNaam = spelNamen.get(i).getSpelNaam();
                 startTimer();
                 break;
             }
         }
-        return quiz.getSpelNaam();
+        return spelNaam;
     }
 
     public String ophalenQuizvraag(String spelNaam, int i){

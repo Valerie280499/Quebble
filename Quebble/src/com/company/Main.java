@@ -2,6 +2,8 @@ package com.company;
 
 import com.company.controller.Spel;
 import com.company.domain.dto.Antwoord;
+import com.company.errors.GebruikerNietGevondenError;
+import com.company.errors.WachtwoordNietCorrectError;
 
 import java.io.*;
 import java.util.*;
@@ -19,9 +21,17 @@ public class Main {
         var run = true;
         while (run){
 
-            var spelnaam = spel.opstartenSpel(gebruikersnaam, wachtwoord);
-            if (spelnaam.contains("spel")){ System.out.println("\nJe gaat het volgende spel spelen: "+spelnaam+". Je kan maximaal een 10 halen."); }
-            else {
+            var spelnaam = "";
+            try {
+                spelnaam = spel.opstartenSpel(gebruikersnaam, wachtwoord);
+            } catch (WachtwoordNietCorrectError | GebruikerNietGevondenError error) {
+                error.printStackTrace();
+                run = false;
+            }
+
+            if (spelnaam.contains("spel")){
+                System.out.println("\nJe gaat het volgende spel spelen: "+spelnaam+". Je kan maximaal een 10 halen.");
+            } else {
                 System.out.println(spelnaam);
                 run = false;
             }
