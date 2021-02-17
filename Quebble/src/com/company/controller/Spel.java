@@ -132,10 +132,9 @@ public class Spel {
         return controlePoging;
     }
 
-    public int berekenScore(String gebruikersnaam, String spelnaam, ArrayList<Character> letters) {
+    public Integer berekenScore(String gebruikersnaam, String spelnaam, ArrayList<Character> letters) {
         var benodigdeTijd = stopTimer();
-        var totaalAantalBehaaldePunten = SCORE.berekenScore(letters, woord, benodigdeTijd);
-        totaalAantalBehaaldePunten = (totaalAantalBehaaldePunten/6)*5;
+        int totaalAantalBehaaldePunten = SCORE.berekenScore(letters, woord, benodigdeTijd);
 
         try {
             var gebruiker = getGebruiker(gebruikersnaam);

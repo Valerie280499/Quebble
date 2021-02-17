@@ -30,7 +30,7 @@ public class Main {
             }
 
             if (spelnaam.contains("spel")){
-                System.out.println("\nJe gaat het volgende spel spelen: "+spelnaam+". Je kan maximaal een 10 halen.");
+                System.out.println("\nJe gaat het volgende spel spelen: "+spelnaam+". Je kan maximaal 12 punten halen.");
             } else {
                 System.out.println(spelnaam);
                 run = false;

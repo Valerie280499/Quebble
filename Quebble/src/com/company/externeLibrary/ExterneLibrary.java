@@ -11,7 +11,7 @@ public class ExterneLibrary {
     public ExterneLibrary() { }
 
     public boolean controleerWoord(String poging){
-        file = new File("src/com/company/woordenlijsten/woordenVan"+poging.length()+"Letters");
+        file = new File("Quebble/src/com/company/woordenlijsten/woordenVan"+String.valueOf(poging.length())+"Letters");
         createScanner();
 
         while (scan.hasNext()){
@@ -26,7 +26,7 @@ public class ExterneLibrary {
     public void createScanner(){
         try {
             scan = new Scanner(file);
-            scan.useDelimiter("\\n");
+            scan.useDelimiter("\\r\\n");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

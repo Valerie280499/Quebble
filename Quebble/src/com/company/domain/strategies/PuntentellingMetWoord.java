@@ -16,10 +16,10 @@ public class PuntentellingMetWoord implements Puntentelling {
 
     public PuntentellingMetWoord() {
         puntenVoorBenodigdeTijd = new HashMap<>(){{
-            this.put(4, range(-1, 21));
-            this.put(3, range(21, 31));
-            this.put(2, range(31, 41));
-            this.put(1, range(41, 121));
+            this.put(4, range(-1, 2));
+            this.put(3, range(2, 5));
+            this.put(2, range(5, 9));
+            this.put(1, range(9, 120));
         }};
 
         puntenVoorAantalJuisteAntwoorden = new HashMap<>(){{
