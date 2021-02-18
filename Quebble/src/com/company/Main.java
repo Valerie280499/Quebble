@@ -47,12 +47,13 @@ public class Main {
             }
 
             var letters = SPEL.controleerAntwoorden(antwoorden, spelnaam);
+            System.out.println("Je hebt de volgende letters verdiend:\n");
             letters.forEach(System.out::println);
-            System.out.println("type 'X' als je wilt opgeven");
 
             var controlePoging = false;
             var poging = "";
             while (!controlePoging){
+                System.out.println("\nProbeer een woord te vormen of type 'X' als je wilt opgeven\n");
                 poging = readInputFromUser();
 
                 if (poging.equals("x")){
